@@ -6,6 +6,7 @@ html {
 :root {
   --light: #ecf0f1;
   --dark: #2c3e50;
+  --blue: #2980b9;
 }
 
 body {
@@ -99,6 +100,23 @@ h1 {
   padding: 2rem;
 }
 
+.copy-message {
+  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+
+  color: #fff;
+  background-color: var(--blue);
+  opacity: .9;
+}
+
 .text-center {
   text-align: center;
+}
+
+.hide {
+  display: none;
 }

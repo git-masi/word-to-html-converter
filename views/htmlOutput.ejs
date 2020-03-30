@@ -8,6 +8,10 @@
 </head>
 
 <body>
+  <div class="copy-message hide">
+    <h3 class="text-center">Copied to clipboard</h3>
+  </div>
+
   <h2 class="text-center">Code</h2>
 
   <% if (html) { %>
@@ -23,6 +27,32 @@
     <%- html %>
   </section>
   <% } %>
+
+  <script>
+    const outputCode = document.querySelector('.output-code');
+
+    outputCode.addEventListener('click', copyToClipboard);
+
+    async function copyToClipboard(e) {
+      if (!navigator.clipboard) {
+        return // Clipboard API not available
+      }
+      const text = e.target.textContent
+      try {
+        await navigator.clipboard.writeText(text)
+        const copyMessage = document.querySelector('.copy-message');
+        copyMessage.classList.remove('hide');
+
+        setTimeout(() => {
+          copyMessage.classList.add('hide');
+        }, 3000);
+
+        console.log('Copied to clipboard');
+      } catch (err) {
+        console.error('Failed to copy!', err)
+      }
+    }
+  </script>
 
 </body>
 
