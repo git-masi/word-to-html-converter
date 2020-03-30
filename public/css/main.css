@@ -1,0 +1,104 @@
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --light: #ecf0f1;
+  --dark: #2c3e50;
+}
+
+body {
+  font-size: 1.8rem;
+}
+
+pre, code {
+  white-space: pre-line;
+}
+
+h1 {
+  text-align: center;
+}
+
+.form {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid var(--dark);
+  border-radius: 5px;
+}
+
+.form > * {
+  margin-bottom: 3rem;
+}
+
+.form__submit-button {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 1.5rem;
+  width: 90%;
+  position: relative;
+  display: block;
+  overflow: hidden;
+
+  color: var(--light);
+  background-color: var(--dark);
+  border: 1px solid white;
+  border-radius: 1rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.form__submit-button::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+
+  background-color: var(--light);
+  opacity: .3;
+  transition: all 300ms ease-in-out;
+  transform: translateY(100%);
+}
+
+.form__submit-button:hover::after {
+  transform: translateY(0);
+}
+
+.form__input-group {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+
+  border: 1px dashed var(--dark);
+}
+
+.radio-button-label,
+.radio-button-label * {
+  cursor: pointer;
+}
+
+.output-code {
+  padding: 2rem;
+}
+
+.html-preview {
+  padding: 2rem;
+}
+
+.text-center {
+  text-align: center;
+}

@@ -1,0 +1,29 @@
+<%- include('includes/head.ejs', { title: 'HTML Output' }) %>
+  <!-- additional styles if any -->
+
+  <!-- syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/agate.min.css">
+  <script charset="UTF-8" src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+  <h2 class="text-center">Code</h2>
+
+  <% if (html) { %>
+  <pre class="output-code">
+    <code class="html">
+    <%= html %>
+    </code>
+  </pre>
+
+  <h2 class="text-center">Preview</h2>
+
+  <section class="html-preview">
+    <%- html %>
+  </section>
+  <% } %>
+
+</body>
+
+</html>

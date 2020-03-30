@@ -1,0 +1,33 @@
+<%- include('includes/head.ejs', { title: 'Word To HTML Converter' }) %>
+  <!-- additional styles if any -->
+
+</head>
+
+<body>
+  <h1>Word To HTML Converter</h1>
+
+  <form action="/" method="POST" class="form" enctype="multipart/form-data">
+    <label>
+      <h3>Select a Word doc to upload</h3>
+      <input type="file" name="docInput" id="docInput">
+    </label>
+
+    <h3>Use placeholder images?</h3>
+
+    <div class="form__input-group">
+      <label class="radio-button-label">
+        Yes
+        <input type="radio" name="usePlaceholderImages" value="true" checked>
+      </label>
+
+      <label class="radio-button-label">
+        No
+        <input type="radio" name="usePlaceholderImages" value="false">
+      </label>
+    </div>
+
+    <button type="submit" class="form__submit-button">Generate HTML</button>
+  </form>
+
+</body>
+</html>
